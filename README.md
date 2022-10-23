@@ -1,6 +1,6 @@
 # falcata
 ## Overview
-When you copy and paste strings from other sites, it would have duplicated space or new line. Falcata will cut this innecessary fields.
+Copying and pasting strings from other sites would have duplicated space or new lines. Falcata will cut these unnecessary fields.
 
 ## Installation
 
@@ -18,13 +18,21 @@ import(
 	"github.com/voztaka/falcata"
 )
 
-var copy = `The copy string
+var copiedString = ` The copy string
   has
-new lines`
+new lines.  `
 
 func main() {
-	falcata.CutFields(&c)
-	
-	fmt.Println(c) // The copy string has new lines
+	falcata.CutFields(&copiedString)
+	fmt.Println(copiedString)
 }
 ```
+
+## Run
+```bash
+go run main.go
+The copied string has new lines.
+```
+
+
+
